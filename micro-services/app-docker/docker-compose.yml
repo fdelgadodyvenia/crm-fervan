@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  crm-fervan:
+    image: crm-image
+    container_name: crm-image
+    # environment:
+    #  - PYTHONPATH=/home/crm-fervan
+    volumes:
+      # - ${HOME}/.databricks-connect:/home/viadot/.databricks-connect
+      # - ${HOME}/.dbt/profiles.yml:/home/viadot/.dbt/profiles.yml
+      # - ${HOME}/.config/seri/config.yaml:/home/seri/.config/seri/config.yaml
+      # - ${HOME}/.aws/credentials:/home/viadot/.aws/credentials  # for S3 tests
+        - ../:/home/crm-fervan
+    # shm_size: '4gb'
+    # command: sleep infinity
+    # restart: "unless-stopped"

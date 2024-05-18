@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+# Get current directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$DIR"/../ || exit
+
+docker compose run --rm -it s3cmd "$@"

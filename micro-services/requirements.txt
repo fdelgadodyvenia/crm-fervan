@@ -1,0 +1,28 @@
+psycopg2-binary
+mkdocs-include-dir-to-nav >=1.2, <2
+mkdocstrings[python] >=0.22, <1.0
+mkdocs-material >=9.0.15, <9.1
+mkdocs-mermaid2-plugin >=0.6, <1
+neoteroi-mkdocs >=1.0, <2
+mkdocs-jupyter >=0.24.2, <1.0
+panel==1.1.1
+altair==5.0.1
+pyarrow==12.0.1 
+openpyxl==3.1.2
+SQLAlchemy==2.0.18
+xmltodict==0.13.0
+#Remove for Prod
+vega-datasets==0.9.0 
+trino==0.326.0
+pysftp==0.2.9
+boto3==1.28.68
+mysql-connector-python==8.4.0
+django==5.0.6 
+#
+pandas>=1.5.0,<1.6.0
+pygit2>=1.10.1,<1.11.0
+prefect==2.14.4
+prefect-email==0.3.1
+# viadot>=2.0a15,<2.1.0
+# viadot @ git+https://github.com/dyvenia/viadot@2.0#egg=viadot
+prefect-azure @ git+https://github.com/Trymzet/prefect-azure@add_keyvault_auth#egg=prefect-azure

@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  mariadb:
+    image: mariadb:10.5.8
+    container_name: maria-db
+    ports: [ '3306:3306' ]
+    env_file: [ ./mariadb-docker/etc/.env ]
+    volumes:
+      - ./mariadb-docker/var/mariadb:/var/lib/mysql
+      #- ./mariadb-docker/etc/mariadb:/etc/mysql/conf.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+    networks:
+      - crm_network
+    restart: "always"
+
+  crm-fervan:
+    image: crm-image
+    container_name: app-crm
+    volumes:
+        - ../:/home/crm-fervan
+    depends_on:
+      - mariadb
+    networks:
+      - crm_network
+    restart: "always"
+
+networks:
+  crm_network:
+    driver: bridge
