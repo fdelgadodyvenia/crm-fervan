@@ -9,7 +9,12 @@
     <h1>List of Clients</h1>
     <ul>
         {% for person in clients %}
-        <li>{{ person.1 }} {{ person.2 }}</li>
+        <li><strong>Name:</strong> {{person.1 }}, <strong>Surname:</strong> {{ person.2 }}, <strong>Email:</strong>
+            {{person.3 }},
+            <strong> Birth Date:</strong> {{person.4 }},
+            <strong>Potential Client Level</strong>:{{ person.5 }}, <strong>Next Action:</strong> {{ person.6 }},
+            <strong>Notes:</strong> {{ person.7 }}
+        </li>
         {% endfor %}
     </ul>
     <a href="{% url 'home' %}">Go back</a>

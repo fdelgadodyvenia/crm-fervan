@@ -21,5 +21,5 @@ from crm_app import views  # Import the views from your app
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('crm_app/', include('crm_app.urls')),
-    path('', views.get_name, name='home'),  # Add this line to route the root URL to the form
+    path('', views.insert_client, name='home'),  # Add this line to route the root URL to the form
 ]
