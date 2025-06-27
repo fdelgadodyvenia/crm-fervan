@@ -16,7 +16,7 @@ jobs:
       - name: Checkout selected branch (target)
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ inputs.target_branch }}
           fetch-depth: 0
 
       - name: Set up Python
@@ -27,10 +27,10 @@ jobs:
       - name: Install Ruff
         run: pip install ruff==0.11.13
 
-      - name: Get modified Python files (compared to master)
+      - name: Get modified Python files (compared to main)
         id: changed
         run: |
-          TARGET=${{ github.ref_name }}
+          TARGET=${{ inputs.target_branch }}
           BASE=main
 
           echo "📘 Comparing origin/$BASE...origin/$TARGET"
