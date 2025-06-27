@@ -3,6 +3,9 @@ from django import forms
 tgrggrtgrtgtrgoioeiwndoiendoiendoadoqdno
 """
 class ClientForm(forms.Form):
+    """
+    peonfpwenfpnfpeoafpewofie2bodoqndoinoiqndoiqndonqioqdqowin.
+    """
     name = forms.CharField(label='Name', max_length=100)
     surname = forms.CharField(label='Surname', max_length=100)
     email = forms.CharField(label='Email', max_length=100)
