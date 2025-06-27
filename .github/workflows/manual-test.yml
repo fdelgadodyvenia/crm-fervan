@@ -1,10 +1,12 @@
 name: Manual Test
 
 on:
-  push:
-    branches:
-      - dev
   workflow_dispatch:
+      inputs:
+        target_branch:
+          description: 'Branch to run the workflow on'
+          required: true
+          default: 'dev'
 
 jobs:
   test:
