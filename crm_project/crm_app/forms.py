@@ -1,6 +1,6 @@
 from django import forms
 """oefiefoenfeowinfeowinfewoinfewonfoewinfoiewnfoiewnfoewnfoewnfoewnfeowinfion
-oienoienfoienfoiwenfoiwnfoiewnfoin
+tgrggrtgrtgtrg
 """
 class ClientForm(forms.Form):
     name = forms.CharField(label='Name', max_length=100)
