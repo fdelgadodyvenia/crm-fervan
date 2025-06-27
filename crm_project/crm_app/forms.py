@@ -2,7 +2,8 @@ from django import forms
 
 class ClientForm(forms.Form):
     """
-    peonfpwenfpnfpeoafffpewofieddd2boddddoqndoinoiqndoiqndonqioqdqowin.
+    This is a one-line summary,
+    but it's spread across two lines.
     """
     name = forms.CharField(label='Name', max_length=100)
     surname = forms.CharField(label='Surname', max_length=100)
