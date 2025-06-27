@@ -9,3 +9,4 @@ class ClientForm(forms.Form):
     next_action = forms.CharField(label='Next Action', max_length=100)
     notes = forms.CharField(label='Notes', max_length=100)
 
+
