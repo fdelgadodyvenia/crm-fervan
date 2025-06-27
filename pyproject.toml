@@ -1,0 +1,81 @@
+[tool.ruff]
+line-length = 88  # Max line length
+
+[tool.ruff.lint]
+# Rules reviewed for ruff 0.11.2
+extend-select = [
+    "I",    # Sort imports
+    "D",    # Check docstrings
+    "W",    # Style warnings
+    "B",    # Find bugs
+    "S",    # Security checks
+    "ANN",  # Require type annotations
+    "A",    # Avoid builtin shadowing
+    "C4",   # Optimize comprehensions
+    "EM",   # Improve error messages
+    "T20",  # Ban print statements
+    "PT",   # Enforce pytest style
+    "RET",  # Check return statements
+    "SIM",  # Simplify code
+    "ARG",  # Flag unused arguments
+    "PTH",  # Use pathlib
+    "N",    # Enforce naming conventions
+    "UP",   # Upgrade syntax
+    "C901", # Limit complexity
+    "FURB", # Refactor suggestions
+    "TRY",  # Better exceptions
+    "PL",   # Pylint-style checks
+    "RUF",  # Ruff-specific rules
+]
+
+ignore = [
+    "W191",   # Allow tabs
+    "D206",   # Skip space indent check
+    "D300",   # Allow single quotes in docstrings
+    "D100",   # No Module docstring required
+    "D101",   # No class docstring required
+    "D417",   # No arg docstrings needed
+    "ANN002", # No *args annotation
+    "ANN003", # No **kwargs annotation
+    "ANN202", # No private return annotation
+    "ANN204", # No special method annotation
+    "S608",   # f-string usage with SQL identifiers is considered No Safe
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"tests/**" = [
+    "S101",   # Allow asserts
+    "ANN201", # No return annotation
+    "ANN202", # No private return annotation
+    "ANN001", # No arg annotation
+    "D103",   # No function docstring
+    "D100",   # No module docstring
+    "N802",   # Allow non-lowercase functions
+    "N803",   # Allow non-lowercase args
+    "B905",   # Allow loose zip
+    "D102",   # No method docstring
+    "PLR2004", # Allow magic values
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 15  # Max function complexity
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true  # Strict import sorting
+lines-after-imports = 2  # Blank lines after imports
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"  # Use Google docstring style
+
+[tool.ruff.lint.pycodestyle]
+max-doc-length = 88  # Docstring line length
+
+[tool.ruff.lint.pylint]
+max-args = 10  # Max function arguments
+
+[tool.ruff.format]
+quote-style = "double"  # Use double quotes
+indent-style = "space"  # Use spaces
+skip-magic-trailing-comma = false  # Keep trailing commas
+line-ending = "auto"  # System line endings
+docstring-code-format = false  # Keep docstring code as-is
