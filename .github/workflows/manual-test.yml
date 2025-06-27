@@ -55,4 +55,4 @@ jobs:
           files=$(echo "${{ steps.changed.outputs.changed_files }}" | grep -v '__init__.py' | grep -v 'smb_to_s3')
           echo "🔍 Running Ruff on:"
           echo "$files"
-          ruff check $files --fix
+          ruff check $files --fix --config pyproject.toml
