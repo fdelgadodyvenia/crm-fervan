@@ -2,7 +2,7 @@ from django import forms
 
 class ClientForm(forms.Form):
     """
-    peonfpwenfpnfpeoafffpewofie2boddddoqndoinoiqndoiqndonqioqdqowin.
+    peonfpwenfpnfpeoafffpewofieddd2boddddoqndoinoiqndoiqndonqioqdqowin.
     """
     name = forms.CharField(label='Name', max_length=100)
     surname = forms.CharField(label='Surname', max_length=100)
