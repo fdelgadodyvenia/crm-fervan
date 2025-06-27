@@ -31,7 +31,7 @@ jobs:
         id: changed
         run: |
           TARGET=${{ github.ref_name }}
-          BASE=master
+          BASE=main
 
           echo "📘 Comparing origin/$BASE...origin/$TARGET"
 
