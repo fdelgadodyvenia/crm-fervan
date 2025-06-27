@@ -1,15 +1,58 @@
-name: Manual Test
+name: Static Code Analysis
 
 on:
-  workflow_dispatch:
-      inputs:
-        target_branch:
-          description: 'Branch to run the workflow on'
-          required: true
-          default: 'dev'
+  workflow_dispatch:  
+    inputs:
+      target_branch:
+        description: 'Branch to run the workflow on'
+        required: true
+        default: 'dev'
 
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "✅ Manual trigger works!"
+      - name: Checkout selected branch (target)
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Ruff
+        run: pip install ruff==0.11.13
+
+      - name: Get modified Python files (compared to master)
+        id: changed
+        run: |
+          TARGET=${{ github.ref_name }}
+          BASE=master
+
+          echo "📘 Comparing origin/$BASE...origin/$TARGET"
+
+          git fetch origin "$BASE"
+          git fetch origin "$TARGET"
+
+          FILES=$(git diff --name-only origin/"$BASE"...origin/"$TARGET" | grep '\.py$' || true)
+
+          echo "Changed Python files:"
+          echo "$FILES"
+
+          {
+            echo "changed_files<<EOF"
+            echo "$FILES"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+
+      - name: Run Ruff on each modified Python file (excluding __init__.py)
+        if: steps.changed.outputs.changed_files != ''
+        run: |
+          files=$(echo "${{ steps.changed.outputs.changed_files }}" | grep -v '__init__.py' | grep -v 'smb_to_s3')
+          echo "🔍 Running Ruff on:"
+          echo "$files"
+          ruff check $files --fix
