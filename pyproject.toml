@@ -1,5 +1,5 @@
 [tool.ruff]
-line-length = 5  # Max line length
+line-length = 100  # Max line length
 
 [tool.ruff.lint]
 # Rules reviewed for ruff 0.11.2
@@ -29,6 +29,9 @@ extend-select = [
 ]
 
 ignore = [
+    "I001",
+    "D200",
+    "D212",
     "W191",   # Allow tabs
     "D206",   # Skip space indent check
     "D300",   # Allow single quotes in docstrings
