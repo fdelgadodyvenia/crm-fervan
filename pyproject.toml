@@ -29,9 +29,6 @@ extend-select = [
 ]
 
 ignore = [
-    "I001",
-    "D200",
-    "D212",
     "W191",   # Allow tabs
     "D206",   # Skip space indent check
     "D300",   # Allow single quotes in docstrings
