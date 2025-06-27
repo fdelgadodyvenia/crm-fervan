@@ -1,5 +1,5 @@
 [tool.ruff]
-line-length = 88  # Max line length
+line-length = 5  # Max line length
 
 [tool.ruff.lint]
 # Rules reviewed for ruff 0.11.2
